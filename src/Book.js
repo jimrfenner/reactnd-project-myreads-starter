@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Book extends Component {
+  static PropTypes = {
+    title: PropTypes.string.isRequired,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    authors: PropTypes.string.isRequired,
+    backgroundImage: PropTypes.string.isRequired
+  };
   render() {
     const { book } = this.props;
     const style = {
