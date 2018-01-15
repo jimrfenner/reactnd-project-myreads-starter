@@ -43,7 +43,7 @@ class ListBooks extends Component {
   }
 }
 
-ListBooks.PropTypes = {
+ListBooks.propTypes = {
   books: PropTypes.array.isRequired
 };
 
