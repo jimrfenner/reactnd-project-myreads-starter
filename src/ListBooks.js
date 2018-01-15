@@ -5,7 +5,7 @@ import Bookshelf from './Bookshelf';
 
 class ListBooks extends Component {
   render() {
-    const { books } = this.props;
+    const { books, updateBookShelf } = this.props;
 
     const shelves = [
       { type: 'currentlyReading', title: 'Currently Reading', groupBooks: [] },
@@ -31,6 +31,7 @@ class ListBooks extends Component {
                   key={index}
                   title={shelf.title}
                   groupBooks={shelf.groupBooks}
+                  updateBookShelf={updateBookShelf}
                 />
               )
           )}
@@ -44,7 +45,8 @@ class ListBooks extends Component {
 }
 
 ListBooks.propTypes = {
-  books: PropTypes.array.isRequired
+  books: PropTypes.array.isRequired,
+  updateBookShelf: PropTypes.func
 };
 
 export default ListBooks;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class Bookshelf extends Component {
   render() {
-    const { title, groupBooks } = this.props;
+    const { title, groupBooks, updateBookShelf } = this.props;
 
     return (
       <div>
@@ -14,7 +14,7 @@ class Bookshelf extends Component {
             <ol className="books-grid">
               {groupBooks.map(book => (
                 <li key={book.id}>
-                  <Book book={book} />
+                  <Book book={book} updateBookShelf={updateBookShelf} />
                 </li>
               ))}
             </ol>
@@ -27,7 +27,8 @@ class Bookshelf extends Component {
 
 Bookshelf.propTypes = {
   title: PropTypes.string.isRequired,
-  groupBooks: PropTypes.array.isRequired
+  groupBooks: PropTypes.array.isRequired,
+  updateBookShelf: PropTypes.func
 };
 
 export default Bookshelf;
