@@ -13,7 +13,7 @@ class Search extends Component {
 
   updateQuery = query => {
     this.setState({ query });
-    this.searchBooks({ query });
+    this.searchBooks(query);
   };
 
   updateSearchResult = value => {
